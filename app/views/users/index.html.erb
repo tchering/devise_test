@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Country</th>
+            <th>Occupation</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.email %></td>
+                <td><%= user.address ? user.address.country : "No address provided" %> </td>
+                <td><%= user.occupation %></td>
+                <td><%= user.gender %></td>
+                <td><button class="btn btn-sm btn-danger">Del</button></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

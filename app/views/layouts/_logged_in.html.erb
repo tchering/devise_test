@@ -1,0 +1,33 @@
+<li class="nav-item dropdown">
+    <a
+        data-mdb-dropdown-init
+        class="nav-link dropdown-toggle d-flex align-items-center"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        aria-expanded="false"
+    >
+    
+        <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+            class="rounded-circle"
+            height="22"
+            alt="Portrait of a Woman"
+            loading="lazy"
+        />
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <li>
+            
+            <%= link_to "My profile", user_path(current_user), class: "dropdown-item" %>
+        </li>
+        <li>
+            
+            <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
+        </li>
+        <li>
+        
+            <%= link_to "Logout", destroy_user_session_path, class: "dropdown-item", method: :delete, data: { turbo_method: :delete, turbo_action: "replace" } %>
+        </li>
+    </ul>
+</li>

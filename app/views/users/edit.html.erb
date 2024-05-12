@@ -1,0 +1,17 @@
+<%= form_with(model: @user) do |f| %>
+    <h1>Update you Credentials</h1>
+    <% # <%= render "shared/error_messages", resource: @user %>
+    <div class= "field">
+        <%= render "layouts/alert" %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+
+        <%= f.submit "Update", class: "btn btn-primary" %>
+    </div>
+<% end %>
