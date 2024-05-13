@@ -14,6 +14,17 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def destroy
+    @micropost = Micropost.find(params[:id])
+    if current_user = @micropost.user
+      @micropost.destroy
+      flash[:success] = 'Micropost deleted'
+      redirect_to root_path
+    else
+      flash[:danger] = 'You can only delete your own micropost'
+    end
+  end
+
   private
 
   def micropost_params

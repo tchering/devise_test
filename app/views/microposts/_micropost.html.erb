@@ -1,9 +1,14 @@
-<div class="micropost_controller" >
+<div class="micropost_controller d-flex justify-content-between" >
     <div>
        <%= gravatar_for(micropost.user, size: 30) %>
        <%= micropost.content %>
        <div>
         <span style="color:grey;" class="d-flex-end">Posted<%= time_ago_in_words(micropost.created_at) %>ago </span>
         </div>
+    </div>
+    <div>
+        <% if current_user == micropost.user %>
+            <%= link_to "delete", micropost_path(micropost), method: :delete, data: { turbo_method: :delete, turbo_action: :replace, turbo_confirm: "You sure?" } %>
+        <% end %>
     </div>
 </div>

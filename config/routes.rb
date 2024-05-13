@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { registrations: 'registrations' }
   #This above line is saying that we want to use our custom controller for new method but for other methods we want to use the default devise controller.
   root 'static_pages#home'
