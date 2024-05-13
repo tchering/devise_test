@@ -1,0 +1,9 @@
+<div class="micropost_controller" >
+    <div>
+       <%= gravatar_for(micropost.user, size: 30) %>
+       <%= micropost.content %>
+       <div>
+        <span style="color:grey;" class="d-flex-end">Posted<%= time_ago_in_words(micropost.created_at) %>ago </span>
+        </div>
+    </div>
+</div>

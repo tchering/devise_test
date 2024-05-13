@@ -1,27 +1,13 @@
-
-<div class = "show_container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Email</th>
-                <th>Timestamp</th>
-                <th>Gender</th>
-                <th>Occupation</th>
-                <th>Country</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td scope="row"><%= @user.email %></td>
-                <td><span class="timestamp">
-<%= time_ago_in_words(@user.updated_at) %> ago
-</span></td>
-    <td><%= @user.gender %></td>
-    <td><%= @user.occupation %></td>
-    <td><%= @user.address ? @user.address.country : "No address provided" %></td>
-            </tr>
-        </tbody>
-    </table>
-
-
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <%= gravatar_for @user%>
+            <%= @user.email %>
+        </div>
+        <div class="col-6">
+            <%if @user.microposts.any?%>
+            <%= render @microposts%>
+            <%end%>
+        </div>
+    </div>
 </div>

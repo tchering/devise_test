@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
+  #This above line is saying that we want to use our custom controller for new method but for other methods we want to use the default devise controller.
   root 'static_pages#home'
 
   get 'about', to: 'static_pages#about'
@@ -15,4 +16,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :microposts
 end

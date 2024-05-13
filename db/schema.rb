@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_12_133900) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_12_202704) do
   create_table "addresses", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "country"
@@ -19,6 +19,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_12_133900) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "microposts", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,4 +52,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_12_133900) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "microposts", "users"
 end

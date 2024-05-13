@@ -1,0 +1,9 @@
+<%= form_with(model: @micropost) do |f| %>
+    <% if @micropost && @micropost.errors.any? %>
+        <% @micropost.errors.full_messages_for(:content).each do |message| %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% end %>
+    <% end %>
+    <%= f.text_area :content, placeholder: "Write your micropost" %>
+    <%= f.submit class: "btn btn-outline-success" %>
+<% end %>
