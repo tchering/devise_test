@@ -1,0 +1,6 @@
+fr:
+  navbar:
+    dashboard: "Tableau de bord"
+    users: "Utilisateurs"
+    login: "S'identifier"
+    signup: "S'inscrire"

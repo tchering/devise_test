@@ -15,23 +15,27 @@
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <%= link_to t("navbar.dashboard"), "#", class: "nav-link" %>
                 </li>
 
                 <% if user_signed_in? %>
                     <li class="nav-item">
-                        <%= link_to "Users", users_path, class:"nav-link" %>
+                        <%= link_to t("navbar.users"), users_path, class: "nav-link" %>
                     </li>
                 <% end %>
             </ul>
+                <%=render "layouts/international"%>
+             <!-- Language links -->
+           
+            <!-- Language links -->
             <!-- Left links -->
             <% if user_signed_in? %>
                 <%= render "layouts/logged_in" %>
             <% else %>
              <div class="d-flex align-items-center">
-                <%= link_to "Login", new_user_session_path, class: "btn btn-link px-3 me-2", data: { 'mdb-ripple-init': true }, type: "button" %>
+                <%= link_to t("navbar.login"), new_user_session_path, class: "btn btn-link px-3 me-2", data: { 'mdb-ripple-init': true }, type: "button" %>
 
-                <%= link_to "Sign up for free", new_user_registration_path, class: "btn btn-primary me-3", data: { mdb_ripple_init: true } %>
+                <%= link_to t("navbar.signup"), new_user_registration_path, class: "btn btn-primary me-3", data: { mdb_ripple_init: true } %>
 
                 <a data-mdb-ripple-init class="btn btn-dark px-3" href="https://github.com/mdbootstrap/mdb-ui-kit" role="button">
                     <i class="fab fa-github"></i>
@@ -46,4 +50,3 @@
     <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
-
