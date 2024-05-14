@@ -1,9 +1,9 @@
 <div class="micropost_controller d-flex justify-content-between" >
     <div>
-       <%= gravatar_for(micropost.user, size: 30) %>
+        <%= micropost.user.profile_picture.attached? ? image_tag(micropost.user.profile_picture,size:30,class:"rounded-circle") : gravatar_for(micropost.user,size:30) %>
        <%= micropost.content %>
        <div>
-        <span style="color:grey;" class="d-flex-end">Posted<%= time_ago_in_words(micropost.created_at) %>ago </span>
+        <span style="color:grey;" class="d-flex-end">Posted <%= time_ago_in_words(micropost.created_at) %> ago </span>
         </div>
     </div>
     <div>

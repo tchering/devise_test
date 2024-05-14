@@ -1,6 +1,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Profile</th>
             <th>Email</th>
             <th>Country</th>
             <th>Occupation</th>
@@ -11,6 +12,12 @@
     <tbody>
         <% @users.each do |user| %>
             <tr>
+                <td>
+                    <% if user.profile_picture.attached? %>
+                        <%= image_tag user.index_profile%>
+                    <% end %>
+                </td>
+                </td>
                 <td><%= user.email %></td>
                 <td><%= user.address ? user.address.country : "No address provided" %> </td>
                 <td><%= user.occupation %></td>

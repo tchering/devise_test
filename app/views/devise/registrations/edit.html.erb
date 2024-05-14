@@ -47,6 +47,12 @@
     <% end %>
   </div>
 
+  <div class="field">
+    <%= f.file_field :profile_picture, class: "d-none", id: "profile" %>
+    <%= f.label :profile_picture, "Upload Profile Image", class: "btn btn-primary", for: "profile" %>
+  </div>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

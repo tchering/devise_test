@@ -1,0 +1,9 @@
+es:
+  navbar:
+    dashboard: "Tablero"
+    users: "Usuarios"
+    login: "Iniciar Sesión"
+    signup: "Registrarse"
+    profile: "Mi Perfil"
+    logout: "Cerrar Sesión"
+    settings: "Configuración"

@@ -7,27 +7,21 @@
         role="button"
         aria-expanded="false"
     >
-    
-        <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
-            class="rounded-circle"
-            height="22"
-            alt="Portrait of a Woman"
-            loading="lazy"
-        />
+        <%=image_tag current_user.profile_picture, size:"30x30",class:"rounded-circle" if current_user.profile_picture.attached? %>
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <li>
             
-            <%= link_to "My profile", user_path(current_user), class: "dropdown-item" %>
+            <% # <%= link_to "My profile", user_path(current_user), class: "dropdown-item" %>
+            <%= link_to t("navbar.profile"), user_path(current_user), class: "dropdown-item" %>
         </li>
         <li>
-            
-            <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
+    
+            <%= link_to t("navbar.settings"), edit_user_registration_path, class: "dropdown-item" %>
         </li>
         <li>
         
-            <%= link_to "Logout", destroy_user_session_path, class: "dropdown-item", method: :delete, data: { turbo_method: :delete, turbo_action: "replace" } %>
+            <%= link_to t("navbar.logout"), destroy_user_session_path, class: "dropdown-item", method: :delete, data: { turbo_method: :delete, turbo_action: "replace" } %>
         </li>
     </ul>
 </li>

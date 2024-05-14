@@ -8,6 +8,9 @@ gem 'sassc-rails'
 
 gem 'rails-i18n'
 
+gem 'image_processing'
+gem 'mini_magick'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 
@@ -57,6 +60,8 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'guard'
+  gem 'guard-livereload'
   gem 'letter_opener'
   gem 'web-console'
 

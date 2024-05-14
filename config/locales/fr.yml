@@ -4,3 +4,6 @@ fr:
     users: "Utilisateurs"
     login: "S'identifier"
     signup: "S'inscrire"
+    profile: "Mon Profil"
+    logout: "Se déconnecter"
+    settings: "Paramètres"
